@@ -74,6 +74,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        layer_mouse: layer_mouse {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_MOUSE";
+            bindings = <&mo>, <&mkp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -81,10 +90,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E             &kp R        &kp T                                        &kp Y            &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D             &kp F        &kp G      &kp LS(LG(S))      &kp MINUS      &kp H            &kp J  &kp K      &kp L    &kp ENTER
-&mt LEFT_SHIFT Z  &kp X         &kp C             &kp V        &kp B      &kp COLON          &kp SEMICOLON  &kp N            &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT MINUS
-&kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt 2 TAB  &lt 3 CAPS         &lt 3 CAPS     &lt 2 BACKSPACE                             &kp ESCAPE
+&kp Q             &kp W         &kp E             &kp R        &kp T                                        &kp Y            &kp U  &lt 5 I   &kp O               &kp P
+&kp A             &kp S         &kp D             &kp F        &kp G      &kp LS(LG(S))      &kp MINUS      &kp H            &kp J  &kp K     &kp L               &kp ENTER
+&mt LEFT_SHIFT Z  &kp X         &kp C             &kp V        &kp B      &kp COLON          &kp SEMICOLON  &kp N            &kp M  &mkp MB1  &layer_mouse 5 MB2  &mt RIGHT_SHIFT MINUS
+&kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt 2 TAB  &lt 3 CAPS         &lt 3 CAPS     &lt 2 BACKSPACE                                       &kp ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -121,10 +130,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &mkp MB1  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &none   &none   &none   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &none   &none   &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
