@@ -64,6 +64,20 @@
             bindings = <&none &kp LS(I) &kp N4 &kp P &kp A &kp S &kp O &kp N2 &kp N9 &kp N9 &kp N1>;
             label = "PS";
         };
+
+        waku2: waku2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp S &kp H &kp I &kp N &kp Y &kp A &kp UNDER &kp I &kp S &kp H &kp I &kp Z &kp A &kp K &kp I &kp AT &kp W &kp A &kp K &kp U &kp MINUS &kp N2 &kp DOT &kp C &kp O &kp M>;
+            label = "WAKU2";
+        };
+
+        win_ps: win_ps {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp N9 &kp N0 &kp MINUS &kp LS(U) &kp LS(I) &kp LS(O) &kp LS(U) &kp LS(I) &kp LS(O)>;
+            label = "WIN_PS";
+        };
     };
 
     behaviors {
@@ -107,10 +121,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E             &kp R        &kp T                                     &kp Y            &kp U  &lt 5 I   &kp O               &kp P
-&kp A             &kp S         &kp D             &kp F        &kp G      &kp LS(LG(S))      &kp DELETE  &kp H            &kp J  &kp K     &kp L               &kp ENTER
-&mt LEFT_SHIFT Z  &kp X         &kp C             &kp V        &kp B      &mo 6              &kp DELETE  &kp N            &kp M  &mkp MB1  &layer_mouse 5 MB2  &mt RIGHT_SHIFT MINUS
-&kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt 2 TAB  &lt 3 CAPS         &lt 3 CAPS  &lt 2 BACKSPACE                                       &kp ESCAPE
+&kp Q             &kp W         &kp E             &kp R        &kp T                                     &kp Y            &kp U  &kp I     &kp O               &kp P
+&kp A             &kp S         &kp D             &kp F        &kp G      &none           &kp DELETE     &kp H            &kp J  &kp K     &kp L               &kp ENTER
+&mt LEFT_SHIFT Z  &kp X         &kp C             &kp V        &kp B      &mo 6           &kp BACKSPACE  &kp N            &kp M  &mkp MB1  &layer_mouse 5 MB2  &mt RIGHT_SHIFT MINUS
+&kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt 2 TAB  &lt 3 CAPS      &lt 3 CAPS     &lt 2 BACKSPACE                                       &kp ESCAPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -118,10 +132,10 @@
 
         SYMBOL {
             bindings = <
-&kp PRCNT  &kp DLLR   &kp AMPS  &kp CARET  &kp SLASH                       &kp BACKSLASH  &kp LBRC          &kp RBRC           &kp LT            &kp GT
-&kp AT     &kp HASH   &kp STAR  &kp PLUS   &kp EQUAL  &trans      &kp F13  &kp UNDER      &kp LPAR          &kp RPAR           &kp SEMICOLON     &kp COLON
-&kp MINUS  &kp UNDER  &trans    &kp EXCL   &kp QMARK  &trans      &trans   &kp PIPE       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES
-&trans     &trans     &trans    &trans     &trans     &trans      &trans   &trans                                                                &kp SLASH
+&kp PRCNT  &kp DLLR   &kp AMPS  &kp CARET  &kp SLASH                      &kp BACKSLASH  &kp LBRC          &kp RBRC           &kp LT            &kp GT
+&kp AT     &kp HASH   &kp STAR  &kp PLUS   &kp EQUAL  &trans      &trans  &kp UNDER      &kp LPAR          &kp RPAR           &kp SEMICOLON     &kp COLON
+&kp MINUS  &kp UNDER  &trans    &kp EXCL   &kp QMARK  &trans      &trans  &kp PIPE       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES
+&trans     &trans     &trans    &trans     &trans     &trans      &trans  &trans                                                                &kp SLASH
             >;
         };
 
@@ -176,13 +190,24 @@
 
         windows_default {
             bindings = <
-&kp Q             &kp W   &kp E   &kp R        &kp T                                      &kp Y            &kp U  &kp I     &kp O   &kp P
-&kp A             &kp S   &kp D   &kp F        &kp G      &trans          &trans          &kp H            &kp J  &kp K     &kp L   &kp ENTER
-&mt LEFT_SHIFT Z  &kp X   &kp C   &kp V        &kp B      &trans          &trans          &kp N            &kp M  &mkp MB1  &trans  &mt RIGHT_SHIFT MINUS
-&trans            &trans  &trans  &lt 1 SPACE  &lt 2 TAB  &lt 3 CAPS      &lt 3 CAPSLOCK  &lt 2 BACKSPACE                           &lt 3 ESCAPE
+&kp Q             &kp W         &kp E             &kp R        &kp T                                      &kp Y            &kp U  &kp I     &kp O               &kp P
+&kp A             &kp S         &kp D             &kp F        &kp G      &trans          &kp DELETE      &kp H            &kp J  &kp K     &kp L               &kp ENTER
+&mt LEFT_SHIFT Z  &kp X         &kp C             &kp V        &kp B      &mo 6           &kp BACKSPACE   &kp N            &kp M  &mkp MB1  &layer_mouse 5 MB2  &mt RIGHT_SHIFT MINUS
+&kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_CONTROL  &lt 1 SPACE  &lt 2 TAB  &lt 8 CAPS      &lt 8 CAPSLOCK  &lt 2 BACKSPACE                                       &kp ESCAPE
             >;
 
             sensor-bindings = <&scroll_up_down>;
+        };
+
+        windows_num {
+            bindings = <
+&waku2         &none  &kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)  &kp LG(RIGHT_ARROW)                      &kp N7        &kp N8        &kp N9        &kp PLUS    &kp EQUAL
+&win_ps        &none  &none               &none             &none                &trans      &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp N0      &none
+&kp LS(LC(Z))  &none  &none               &none             &none                &trans      &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD  &kp COMMA
+&none          &none  &none               &trans            &trans               &trans      &trans  &trans                                                &none
+            >;
+
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
     };
 };
