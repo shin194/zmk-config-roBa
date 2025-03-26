@@ -71,14 +71,18 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
             tap-ms = <20>;
         };
+
         scroll_left_right: behavior_sensor_rotate_mouse_wheel_left_right {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
             tap-ms = <20>;
         };
+
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -105,7 +109,7 @@
             bindings = <
 &kp Q             &kp W         &kp E             &kp R        &kp T                                        &kp Y            &kp U  &lt 5 I   &kp O               &kp P
 &kp A             &kp S         &kp D             &kp F        &kp G      &kp LS(LG(S))      &kp MINUS      &kp H            &kp J  &kp K     &kp L               &kp ENTER
-&mt LEFT_SHIFT Z  &kp X         &kp C             &kp V        &kp B      &kp COLON          &kp SEMICOLON  &kp N            &kp M  &mkp MB1  &layer_mouse 5 MB2  &mt RIGHT_SHIFT MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C             &kp V        &kp B      &mo 6              &kp SEMICOLON  &kp N            &kp M  &mkp MB1  &layer_mouse 5 MB2  &mt RIGHT_SHIFT MINUS
 &kp LEFT_COMMAND  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 SPACE  &lt 2 TAB  &lt 3 CAPS         &lt 3 CAPS     &lt 2 BACKSPACE                                       &kp ESCAPE
             >;
 
@@ -117,7 +121,7 @@
 &kp PRCNT  &kp DLLR   &kp AMPS  &kp CARET  &kp SLASH                       &kp BACKSLASH  &kp LBRC          &kp RBRC           &kp LT            &kp GT
 &kp AT     &kp HASH   &kp STAR  &kp PLUS   &kp EQUAL  &trans      &kp F13  &kp UNDER      &kp LPAR          &kp RPAR           &kp SEMICOLON     &kp COLON
 &kp MINUS  &kp UNDER  &trans    &kp EXCL   &kp QMARK  &trans      &trans   &kp PIPE       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES
-&trans     &trans     &trans    &trans     &trans     &trans      &trans   &trans                                                                &trans
+&trans     &trans     &trans    &trans     &trans     &trans      &trans   &trans                                                                &kp SLASH
             >;
         };
 
@@ -161,7 +165,7 @@
             >;
         };
 
-        layer_6 {
+        BLUETOOTH {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
