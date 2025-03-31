@@ -128,6 +128,12 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        set_default_layer: set_default_layer {
+            compatible = "zmk,behavior-set-layer";
+            #binding-cells = <1>;
+            layer-set = "default";
+        };
     };
 
     keymap {
