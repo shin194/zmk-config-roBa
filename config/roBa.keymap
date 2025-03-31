@@ -159,7 +159,7 @@
 &kp PRCNT  &kp DLLR   &kp AMPS  &kp CARET  &kp SLASH                      &kp BACKSLASH  &kp LBRC          &kp RBRC           &kp LT            &kp GT
 &kp AT     &kp HASH   &kp STAR  &kp PLUS   &kp EQUAL  &trans      &trans  &kp UNDER      &kp LPAR          &kp RPAR           &kp SEMICOLON     &kp COLON
 &kp MINUS  &kp UNDER  &trans    &kp EXCL   &kp QMARK  &trans      &trans  &kp PIPE       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SINGLE_QUOTE  &kp DOUBLE_QUOTES
-&trans     &trans     &trans    &trans     &trans     &trans      &trans  &trans                                                                &kp SLASH
+&trans     &trans     &trans    &trans     &trans     &trans      &trans  &trans                                                                &kp LC(SLASH)
             >;
         };
 
