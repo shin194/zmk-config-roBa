@@ -110,22 +110,6 @@
             tap-ms = <20>;
         };
 
-        scroll_up_down_reverse: behavior_sensor_rotate_mouse_wheel_up_down_reverse {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-            tap-ms = <20>;
-        };
-
-        scroll_left_right_reverse: behavior_sensor_rotate_mouse_wheel_left_right_reverse {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
-
-            tap-ms = <20>;
-        };
-
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -167,7 +151,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_CONTROL  &lt 7 SPACE  &lt 8 TAB  &lt 9 CAPS      &lt 9 CAPSLOCK  &lt 8 BACKSPACE                                       &kp ESCAPE
             >;
 
-            sensor-bindings = <&scroll_up_down_reverse>;
+            sensor-bindings = <&scroll_up_down>;
         };
 
         SYMBOL {
@@ -248,15 +232,6 @@
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
-        };
-
-        windows_scroll {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
         };
     };
 };
