@@ -102,10 +102,26 @@
             tap-ms = <20>;
         };
 
+        scroll_up_down_reverse: behavior_sensor_rotate_mouse_wheel_up_down_reverse {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
+            tap-ms = <20>;
+        };
+
         scroll_left_right: behavior_sensor_rotate_mouse_wheel_left_right {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
+            tap-ms = <20>;
+        };
+
+        scroll_left_right_reverse: behavior_sensor_rotate_mouse_wheel_left_right_reverse {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
 
             tap-ms = <20>;
         };
@@ -151,7 +167,7 @@
 &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_CONTROL  &lt 7 SPACE  &lt 8 TAB  &lt 9 CAPS      &lt 9 CAPSLOCK  &lt 8 BACKSPACE                                       &kp ESCAPE
             >;
 
-            sensor-bindings = <&scroll_up_down>;
+            sensor-bindings = <&scroll_up_down_reverse>;
         };
 
         SYMBOL {
@@ -220,7 +236,7 @@
 &none          &none  &none  &trans  &trans  &trans                       &trans  &trans                                                              &none
             >;
 
-            sensor-bindings = <&scroll_left_right>;
+            sensor-bindings = <&scroll_left_right_reverse>;
         };
 
         windows_num {
